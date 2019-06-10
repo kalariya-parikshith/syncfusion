@@ -30,10 +30,9 @@ export default class Funnel extends SampleBase {
 							ref={funnel => (this.funnel = funnel)}
 							title='Candidate Funnel'
 							legendSettings={{ toggleVisibility: false }}
-							load={this.load}
 							tooltip={{
 								enable: true,
-								format: 'k'
+								format: '${point.x} : <b>${point.y}%</b>'
 							}}
 							resized={this.onChartResized}
 							loaded={this.onChartLoad}
@@ -58,6 +57,13 @@ export default class Funnel extends SampleBase {
 									gapRatio={0.03}
 									neckHeight='25%'
 									explode={true}
+									// palettes={[
+									// 	'#ff0000',
+									// 	'#00ff00',
+									// 	'#0000ff',
+									// 	'#00ff00',
+									// 	'#00000f'
+									// ]}
 									dataLabel={{
 										name: 'text',
 										visible: true,

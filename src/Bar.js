@@ -17,7 +17,7 @@ import {
 import { Browser } from '@syncfusion/ej2-base';
 import { SampleBase } from './sample-base';
 export let data1 = [
-	{ x: 'VP Approval', y: 7 },
+	{ x: 'VP Approval', y: 7, color: 'black' },
 	{ x: 'Vendor Submit ', y: 3 },
 	{ x: 'Interview', y: 5 },
 	{ x: 'Offer', y: 1 }
@@ -53,6 +53,7 @@ export default class Bar extends SampleBase {
 							}}
 							chartArea={{ border: { width: 0 } }}
 							load={this.load}
+							// palettes={['#ff0000', '#00ff00', '#0000ff']}
 							width={Browser.isDevice ? '100%' : '60%'}
 							title='Number of Days at each stage of recruitment cycle'
 							loaded={this.onChartLoad}

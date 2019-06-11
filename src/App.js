@@ -10,6 +10,7 @@ import Bar from './Bar';
 import SideDrawer from './Components/SideDrawer';
 import SimpleCard from './Components/SimpleCard';
 import SimpleTable from './Components/SimpleTable';
+import DoughNut from './Components/DoughNut';
 
 export let data1 = [
   { x: 'VP Approval', y: 7 },
@@ -29,8 +30,12 @@ export default class App extends SampleBase {
         <main
           style={{ marginLeft: '26.1%', marginTop: '10%', marginRight: '8%' }}
         >
-          <SimpleCard />
-          <SimpleCard />
+          <SimpleCard>
+            <DoughNut />
+          </SimpleCard>
+          <SimpleCard>
+            <Bar />
+          </SimpleCard>
           <SimpleTable />
           {/* <Bar />
           <Funnel /> */}

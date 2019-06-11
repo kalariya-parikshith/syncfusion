@@ -53,7 +53,7 @@ export default class Bar extends SampleBase {
               chartArea={{ border: { width: 0 } }}
               load={this.load}
               // palettes={['#ff0000', '#00ff00', '#0000ff']}
-              width={Browser.isDevice ? '100%' : '30%'}
+              width='100%'
               height='300px'
               titleStyle={{
                 color: '#bca7a7',
@@ -63,16 +63,14 @@ export default class Bar extends SampleBase {
               title='Number of Days at each stage of recruitment cycle'
               loaded={this.onChartLoad}
             >
-              <Inject
-                services={[BarSeries, DataLabel, Category, Legend, Tooltip]}
-              />
+              <Inject services={[BarSeries, DataLabel, Category, Tooltip]} />
               <SeriesCollectionDirective>
                 <SeriesDirective
                   dataSource={data1}
                   xName='x'
                   yName='y'
                   type='Bar'
-                  columnSpacing='0.5'
+                  columnSpacing='0.8'
                   name='Days'
                   marker={{
                     dataLabel: {

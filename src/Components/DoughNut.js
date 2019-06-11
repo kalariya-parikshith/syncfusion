@@ -28,6 +28,12 @@ export default class DoughNutMod extends Component {
         tooltip={{ enable: false }}
         width='100%'
         height='300px'
+        titleStyle={{
+          color: '#bca7a7',
+          fontWeight: '700',
+          float: 'left'
+        }}
+        title='Number of Days at each stage of recruitment cycle'
       >
         <Inject services={[PieSeries, AccumulationDataLabel]} />
         <AccumulationSeriesCollectionDirective>

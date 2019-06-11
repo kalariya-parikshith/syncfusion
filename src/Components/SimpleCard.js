@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import DoughNut from './DoughNut';
 import { borderRadius } from '@material-ui/system';
+import Bar from '../Bar';
 
 const useStyles = makeStyles({
   card: {
@@ -23,20 +24,21 @@ const useStyles = makeStyles({
   }
 });
 
-export default function SimpleCard() {
+export default function SimpleCard(props) {
   const classes = useStyles();
 
   return (
     <Card className={classes.card}>
       <CardContent>
-        <Typography
+        {/* <Typography
           className={classes.title}
           color='textSecondary'
           gutterBottom
         >
           Word of the Day
-        </Typography>
-        <DoughNut />
+        </Typography> */}
+        {/* <DoughNut /> */}
+        {props.children}
       </CardContent>
     </Card>
   );

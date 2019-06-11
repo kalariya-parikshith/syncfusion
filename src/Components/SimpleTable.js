@@ -96,9 +96,7 @@ export default function SimpleTable() {
                 <TableCell align='left' className={classes.tableRow}>
                   Terminations
                 </TableCell>
-                <TableCell align='left' className={classes.tableRow}>
-                  Violations
-                </TableCell>
+                <TableCell align='left'>Violations</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

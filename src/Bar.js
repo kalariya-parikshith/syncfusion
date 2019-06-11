@@ -17,10 +17,10 @@ import {
 import { Browser } from '@syncfusion/ej2-base';
 import { SampleBase } from './sample-base';
 export let data1 = [
-	{ x: 'VP Approval', y: 7, color: 'black' },
+	{ x: 'Offer', y: 1 },
 	{ x: 'Vendor Submit ', y: 3 },
 	{ x: 'Interview', y: 5 },
-	{ x: 'Offer', y: 1 }
+	{ x: 'VP Approval', y: 7 }
 ];
 
 /**
@@ -34,16 +34,15 @@ export default class Bar extends SampleBase {
 					<div>
 						<ChartComponent
 							id='charts'
-							style={{ textAlign: 'center' }}
 							primaryXAxis={{
 								valueType: 'Category',
-								title: 'Stages',
+								majorTickLines: { width: 0 },
+								lineStyle: { width: 0 },
 								interval: 1,
 								majorGridLines: { width: 0 }
 							}}
 							primaryYAxis={{
 								labelFormat: '{value}',
-								edgeLabelPlacement: 'Shift',
 								majorGridLines: { width: 0 },
 								majorTickLines: { width: 0 },
 								lineStyle: { width: 0 },
@@ -54,7 +53,13 @@ export default class Bar extends SampleBase {
 							chartArea={{ border: { width: 0 } }}
 							load={this.load}
 							// palettes={['#ff0000', '#00ff00', '#0000ff']}
-							width={Browser.isDevice ? '100%' : '60%'}
+							width={Browser.isDevice ? '100%' : '30%'}
+							height='300px'
+							titleStyle={{
+								color: '#bca7a7',
+								fontWeight: '700',
+								float: 'left'
+							}}
 							title='Number of Days at each stage of recruitment cycle'
 							loaded={this.onChartLoad}
 						>
@@ -67,15 +72,15 @@ export default class Bar extends SampleBase {
 									xName='x'
 									yName='y'
 									type='Bar'
+									columnSpacing='0.5'
 									name='Days'
-									width={2}
 									marker={{
 										dataLabel: {
 											visible: true,
-											position: 'Top',
+											position: 'Outer',
 											font: {
 												fontWeight: '600',
-												color: '#ffffff'
+												color: '#686666'
 											}
 										}
 									}}

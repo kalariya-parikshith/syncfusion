@@ -1,5 +1,8 @@
+import { render } from 'react-dom';
+import './index.css';
 import * as React from 'react';
 import { SampleBase } from './sample-base';
+import { PropertyPane } from './property-pane';
 import {
 	AccumulationChartComponent,
 	AccumulationSeriesCollectionDirective,
@@ -10,15 +13,13 @@ import {
 	AccumulationTooltip,
 	AccumulationDataLabel
 } from '@syncfusion/ej2-react-charts';
-
 export let data1 = [
-	{ x: 'Placements', y: 2.3, text: '2' },
-	{ x: 'Offers', y: 3.4, text: '3' },
-	{ x: 'Interviews', y: 9, text: '8' },
-	{ x: 'MSP approved ', y: 40, text: '35' },
-	{ x: 'Vendor Submit ', y: 100, text: '86' }
+	{ x: 'Placement', y: 2.3, text: '2' },
+	{ x: 'Offers', y: 3.5, text: '3' },
+	{ x: 'Interviews', y: 9.3, text: '8' },
+	{ x: 'MSP approved', y: 40.7, text: '35' },
+	{ x: 'Vendor Submit', y: 100, text: '86' }
 ];
-
 export default class Funnel extends SampleBase {
 	render() {
 		return (
@@ -34,8 +35,8 @@ export default class Funnel extends SampleBase {
 								enable: true,
 								format: '${point.x} : <b>${point.y}%</b>'
 							}}
-							resized={this.onChartResized}
-							loaded={this.onChartLoad}
+							resized={this.onChartResized.bind(this)}
+							loaded={this.onChartLoad.bind(this)}
 						>
 							<Inject
 								services={[
@@ -51,19 +52,12 @@ export default class Funnel extends SampleBase {
 									xName='x'
 									yName='y'
 									type='Funnel'
-									width='40%'
-									height='90%'
-									neckWidth='10%'
+									width='60%'
+									height='80%'
+									neckWidth='5%'
 									gapRatio={0.03}
 									neckHeight='25%'
 									explode={true}
-									// palettes={[
-									// 	'#ff0000',
-									// 	'#00ff00',
-									// 	'#0000ff',
-									// 	'#00ff00',
-									// 	'#00000f'
-									// ]}
 									dataLabel={{
 										name: 'text',
 										visible: true,
@@ -80,11 +74,27 @@ export default class Funnel extends SampleBase {
 			</div>
 		);
 	}
-
-	onChartLoad = args => {
+	pyramidneckWidth(e) {
+		let neckWidth = document.getElementById('pyramidNeckWidth').value;
+		this.funnel.series[0].neckWidth = neckWidth + '%';
+		document.getElementById('neckWidth').innerHTML = neckWidth + '%';
+		this.funnel.removeSvg();
+		this.funnel.refreshSeries();
+		this.funnel.refreshChart();
+	}
+	pyramidneckHeight(e) {
+		let neckHeight = document.getElementById('pyramidNeckHeight').value;
+		this.funnel.series[0].neckHeight = neckHeight + '%';
+		document.getElementById('neckHeight').innerHTML = neckHeight + '%';
+		this.funnel.series[0].animation.enable = false;
+		this.funnel.removeSvg();
+		this.funnel.refreshSeries();
+		this.funnel.refreshChart();
+	}
+	onChartLoad(args) {
 		document.getElementById('funnel-chart').setAttribute('title', '');
-	};
-	onChartResized = args => {
+	}
+	onChartResized(args) {
 		let bounds = document
 			.getElementById('funnel-chart')
 			.getBoundingClientRect();
@@ -95,5 +105,5 @@ export default class Funnel extends SampleBase {
 			args.accumulation.series[0].width = '60%';
 			args.accumulation.series[0].height = '80%';
 		}
-	};
+	}
 }

@@ -45,10 +45,11 @@ export let data1 = [
 export default class App extends SampleBase {
 	render() {
 		return (
-			<div>
+			<div style={{ display: 'flex' }}>
 				<Bar />
-				<Funnel />
-				{/* <BarCustom /> */}
+				<div>
+					<Funnel />
+				</div>
 			</div>
 		);
 	}

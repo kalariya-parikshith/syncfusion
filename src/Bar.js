@@ -58,7 +58,7 @@ export default class Bar extends SampleBase {
 							titleStyle={{
 								color: '#bca7a7',
 								fontWeight: '700',
-								float: 'left'
+								textAlignment: 'Near'
 							}}
 							title='Number of Days at each stage of recruitment cycle'
 							loaded={this.onChartLoad}

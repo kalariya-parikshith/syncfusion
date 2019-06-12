@@ -17,10 +17,11 @@ import {
 import { Browser } from '@syncfusion/ej2-base';
 import { SampleBase } from './sample-base';
 export let data1 = [
-	{ x: 'VP Approval', y: 7 },
-	{ x: 'Interview', y: 5 },
-	{ x: 'Vendor Submit ', y: 3 },
-	{ x: 'Offer', y: 1 }
+	{ x: 'Amazus', y: 12 },
+	{ x: 'Gibrakol', y: 10 },
+	{ x: 'Mirasoft', y: 7 },
+	{ x: 'Litmus7', y: 5 },
+	{ x: 'Experis', y: 3 }
 ];
 
 /**
@@ -58,9 +59,9 @@ export default class Bar extends SampleBase {
 							titleStyle={{
 								color: '#bca7a7',
 								fontWeight: '700',
-								float: 'left'
+								textAlignment: 'Near'
 							}}
-							title='Number of Days at each stage of recruitment cycle'
+							title='BOTTOM 5 VENDORS'
 						>
 							<Inject services={[BarSeries, DataLabel, Category, Tooltip]} />
 							<SeriesCollectionDirective>
@@ -69,7 +70,7 @@ export default class Bar extends SampleBase {
 									xName='x'
 									yName='y'
 									type='Bar'
-									columnSpacing='0.8'
+									columnSpacing='0.65'
 									name='Days'
 									marker={{
 										dataLabel: {

@@ -17,10 +17,11 @@ import {
 import { Browser } from '@syncfusion/ej2-base';
 import { SampleBase } from './sample-base';
 export let data1 = [
-	{ x: 'Offer', y: 1 },
-	{ x: 'Vendor Submit ', y: 3 },
-	{ x: 'Interview', y: 5 },
-	{ x: 'VP Approval', y: 7 }
+	{ x: 'Silverkey', y: 88 },
+	{ x: 'Kallsenter', y: 90 },
+	{ x: 'Paird', y: 93 },
+	{ x: 'KForce', y: 95 },
+	{ x: 'Callibrity', y: 100 }
 ];
 
 /**
@@ -58,9 +59,9 @@ export default class Bar extends SampleBase {
 							titleStyle={{
 								color: '#bca7a7',
 								fontWeight: '700',
-								float: 'left'
+								textAlignment: 'Near'
 							}}
-							title='Number of Days at each stage of recruitment cycle'
+							title='TOP 5 VENDORS'
 							loaded={this.onChartLoad}
 						>
 							<Inject services={[BarSeries, DataLabel, Category, Tooltip]} />
@@ -70,7 +71,7 @@ export default class Bar extends SampleBase {
 									xName='x'
 									yName='y'
 									type='Bar'
-									columnSpacing='0.8'
+									columnSpacing='0.65'
 									name='Days'
 									marker={{
 										dataLabel: {

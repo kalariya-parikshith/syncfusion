@@ -9,7 +9,7 @@ import TabComponent from './Tabs';
 const useStyles = makeStyles({
 	reportHead: {
 		width: '100%',
-		height: '117px',
+		height: '118px',
 		marginBottom: '20px',
 		overflow: 'visible'
 	},

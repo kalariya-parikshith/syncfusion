@@ -78,14 +78,10 @@ export default function CustomizedMenus() {
 				onClose={handleClose}
 			>
 				<StyledMenuItem>
-					<ListItemText
-						primary='Last 30 Days'
-						className={classes.greyColor}
-						style={{ width: '170px' }}
-					/>
+					<ListItemText primary='Last 30 Days' style={{ width: '170px' }} />
 				</StyledMenuItem>
 				<StyledMenuItem>
-					<ListItemText primary='Last 90 Days' />
+					<ListItemText primary='Last 90 Days' style={{ fontSize: 10 }} />
 				</StyledMenuItem>
 				<StyledMenuItem>
 					<ListItemText primary='Quarter 1' />

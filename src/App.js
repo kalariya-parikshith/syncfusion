@@ -41,10 +41,10 @@ export default class App extends SampleBase {
 					<main style={{ marginLeft: '26.1%', marginRight: '8%' }}>
 						<ReportHead />
 						<SimpleCard>
-							<Funnel />
+							<Bar />
 						</SimpleCard>
 						<SimpleCard>
-							<DoughNut />
+							<Bar2 />
 						</SimpleCard>
 						<SimpleTable />
 					</main>

@@ -10,36 +10,24 @@ import { borderRadius } from '@material-ui/system';
 import Bar from '../Bar';
 
 const useStyles = makeStyles({
-  card: {
-    minWidth: 245,
-    // marginLeft: '19.5%',
-    // marginRight: '8%',
-    // height: '40%',
-    display: 'inline-block',
-    width: '50%',
-    borderRadius: '0'
-  },
-  title: {
-    fontSize: 14
-  }
+	card: {
+		minWidth: 245,
+		// height: 200,
+		display: 'inline-block',
+		width: '50%',
+		borderRadius: '0'
+	},
+	title: {
+		fontSize: 14
+	}
 });
 
 export default function SimpleCard(props) {
-  const classes = useStyles();
+	const classes = useStyles();
 
-  return (
-    <Card className={classes.card}>
-      <CardContent>
-        {/* <Typography
-          className={classes.title}
-          color='textSecondary'
-          gutterBottom
-        >
-          Word of the Day
-        </Typography> */}
-        {/* <DoughNut /> */}
-        {props.children}
-      </CardContent>
-    </Card>
-  );
+	return (
+		<Card className={classes.card}>
+			<CardContent>{props.children}</CardContent>
+		</Card>
+	);
 }

@@ -11,7 +11,9 @@ import SideDrawer from './Components/SideDrawer';
 import SimpleCard from './Components/SimpleCard';
 import SimpleTable from './Components/SimpleTable';
 import DoughNut from './Components/DoughNut';
-
+import ReportHead from './Components/ReportHead';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Bar2 from './BarCustom';
 export let data1 = [
 	{ x: 'VP Approval', y: 7 },
 	{ x: 'Vendor Submit ', y: 3 },
@@ -19,28 +21,35 @@ export let data1 = [
 	{ x: 'Offer', y: 1 }
 ];
 
+const theme = createMuiTheme({
+	palette: {
+		secondary: {
+			main: '#292C60'
+		}
+	}
+});
+
 /**
  * Bar sample
  */
 export default class App extends SampleBase {
 	render() {
 		return (
-			<div>
-				<SideDrawer />
-				<main
-					style={{ marginLeft: '26.1%', marginTop: '10%', marginRight: '8%' }}
-				>
-					<SimpleCard>
-						<DoughNut />
-					</SimpleCard>
-					<SimpleCard>
-						<Bar />
-					</SimpleCard>
-					<SimpleTable />
-					{/* <Bar />
-          <Funnel /> */}
-				</main>
-			</div>
+			<MuiThemeProvider theme={theme}>
+				<div>
+					<SideDrawer />
+					<main style={{ marginLeft: '26.1%', marginRight: '8%' }}>
+						<ReportHead />
+						<SimpleCard>
+							<Funnel />
+						</SimpleCard>
+						<SimpleCard>
+							<DoughNut />
+						</SimpleCard>
+						<SimpleTable />
+					</main>
+				</div>
+			</MuiThemeProvider>
 		);
 	}
 }

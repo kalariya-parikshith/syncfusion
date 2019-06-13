@@ -15,6 +15,10 @@ import ReportHead from './Components/ReportHead';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Bar2 from './BarCustom';
 import { StackedBar } from './Components/StackedBar';
+import MainFunnel from './Components/MainFunnel';
+import RangeColumn from './Components/RangeColumn';
+import MainRangeColumn from './Components/MainRangeColumn';
+
 export let data1 = [
 	{ x: 'VP Approval', y: 7 },
 	{ x: 'Vendor Submit ', y: 3 },
@@ -38,18 +42,22 @@ export default class App extends SampleBase {
 		return (
 			<MuiThemeProvider theme={theme}>
 				<div>
-					{/* <SideDrawer />
+					<SideDrawer />
 					<main style={{ marginLeft: '26.1%', marginRight: '8%' }}>
 						<ReportHead />
-						<SimpleCard>
+						{/* <SimpleCard>
 							<Funnel />
 						</SimpleCard>
 						<SimpleCard>
 							<DoughNut />
 						</SimpleCard>
-						<SimpleTable />
-					</main> */}
-					<StackedBar />
+						<SimpleTable /> */}
+						<MainFunnel>
+							<Funnel />
+						</MainFunnel>
+						{/* <MainRangeColumn /> */}
+					</main>
+					{/* <StackedBar /> */}
 				</div>
 			</MuiThemeProvider>
 		);

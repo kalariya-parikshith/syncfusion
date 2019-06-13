@@ -14,11 +14,10 @@ import {
 	AccumulationDataLabel
 } from '@syncfusion/ej2-react-charts';
 export let data1 = [
-	{ x: 'Placement', y: 2.3, text: '2' },
-	{ x: 'Offers', y: 3.5, text: '3' },
-	{ x: 'Interviews', y: 9.3, text: '8' },
-	{ x: 'MSP approved', y: 40.7, text: '35' },
-	{ x: 'Vendor Submit', y: 100, text: '86' }
+	{ x: 'Offers', y: 3, text: '3' },
+	{ x: 'Interviews', y: 8, text: '8' },
+	{ x: 'MSP approved', y: 35, text: '35' },
+	{ x: 'Vendor Submit', y: 86, text: '86' }
 ];
 export default class Funnel extends SampleBase {
 	render() {
@@ -29,12 +28,18 @@ export default class Funnel extends SampleBase {
 						<AccumulationChartComponent
 							id='funnel-chart'
 							ref={funnel => (this.funnel = funnel)}
-							title='Candidate Funnel'
+							title='Candidate Pipeline Metrics'
 							titleStyle={{
 								color: '#bca7a7',
 								fontWeight: '700',
 								float: 'left'
 							}}
+							style={{
+								padding: 0,
+								margin: 0,
+								border: 0
+							}}
+							height='350'
 							legendSettings={{ toggleVisibility: false, position: 'Bottom' }}
 							tooltip={{
 								enable: true,
@@ -43,7 +48,6 @@ export default class Funnel extends SampleBase {
 						>
 							<Inject
 								services={[
-									AccumulationLegend,
 									FunnelSeries,
 									AccumulationTooltip,
 									AccumulationDataLabel
@@ -55,19 +59,22 @@ export default class Funnel extends SampleBase {
 									xName='x'
 									yName='y'
 									type='Funnel'
-									width='60%'
-									height='80%'
-									neckWidth='5%'
-									gapRatio={0.03}
-									neckHeight='25%'
+									width='100%'
+									height='60%'
+									neckWidth='10%'
+									pyramidMode='Surface'
+									gapRatio={0.1}
+									neckHeight='12%'
 									dataLabel={{
 										name: 'text',
-										visible: true,
+										visible: false,
 										position: 'Inside',
 										font: {
 											fontWeight: '600'
 										}
 									}}
+									palettes={['#37474F', '#546E7A', '#78909C', '#B0BEC5']}
+									style={{ height: '200 !important' }}
 								/>
 							</AccumulationSeriesCollectionDirective>
 						</AccumulationChartComponent>

@@ -51,7 +51,13 @@ export default function MainFunnel(props) {
 	return (
 		<Card className={classes.card}>
 			<div style={{ display: 'flex', flexDirection: 'row' }}>
-				<CardContent style={{ flexGrow: '3', padding: 0 }}>
+				<CardContent
+					style={{
+						flexGrow: '3',
+						padding: 0,
+						paddingTop: 30
+					}}
+				>
 					{props.children}
 				</CardContent>
 				<div

@@ -14,10 +14,10 @@ import {
 	AccumulationDataLabel
 } from '@syncfusion/ej2-react-charts';
 export let data1 = [
-	{ x: 'Offers', y: 3, text: '3' },
-	{ x: 'Interviews', y: 8, text: '8' },
-	{ x: 'MSP approved', y: 35, text: '35' },
-	{ x: 'Vendor Submit', y: 86, text: '86' }
+	{ x: 'Offers', y: 25, text: '3' },
+	{ x: 'Interviews', y: 25, text: '8' },
+	{ x: 'MSP approved', y: 25, text: '35' },
+	{ x: 'Vendor Submit', y: 25, text: '86' }
 ];
 export default class Funnel extends SampleBase {
 	render() {
